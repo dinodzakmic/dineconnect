@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DineConnectXF.View.StartPage"
+             BackgroundColor="#dddddd"
+             Title="Dine Connect">
+  <ScrollView>
+    <StackLayout>
+      <StackLayout Padding="10,10,10,10" Spacing="10">
+        <Frame BackgroundColor="White" Padding="10" OutlineColor="#dddddd" >
+          <Grid ColumnSpacing="5" RowSpacing="10">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Invoice number:"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="End"/>
+            <Entry Grid.Row="0" Grid.Column="1"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+
+
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="Outlet:"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="End"/>
+            <Picker Grid.Row="1" Grid.Column="1"
+                    Title="Outlet items"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+
+            <Label Grid.Row="2" Grid.Column="0"
+                   Text="Supplier:"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="End"/>
+            <Picker Grid.Row="2" Grid.Column="1"
+                    Title="Supplier items"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+          </Grid>
+        </Frame>
+        
+        <Frame BackgroundColor="White" Padding="10" OutlineColor="#dddddd">
+          <StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="30" Spacing="10" >
+              <Image x:Name="AllRadio"
+                     Source="radio"
+                     Aspect="AspectFit"
+                     HeightRequest="15"
+                     HorizontalOptions="Start"/>
+              <Label VerticalTextAlignment="Center"
+                     Text="All Period"
+                     HorizontalOptions="Start"/>
+
+              <Image x:Name="SpecificRadio"
+                     Source="radioselected"
+                     Aspect="AspectFit"
+                     HeightRequest="15"
+                     HorizontalOptions="End"/>
+              <Label VerticalTextAlignment="Center"
+                     Text="Specific Period"
+                     HorizontalOptions="End"/>
+            </StackLayout>
+
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+              </Grid.ColumnDefinitions>
+
+              <Label Grid.Column="0"
+                     Text="Start:"
+                     VerticalTextAlignment="Center"/>
+              <DatePicker Grid.Column="1" />
+
+              <Label Grid.Column="2"
+                     Text="End:"
+                     VerticalTextAlignment="Center"/>
+              <DatePicker Grid.Column="3" />
+
+            </Grid>
+
+          </StackLayout>
+        </Frame>
+        
+      </StackLayout>
+
+      <Grid HeightRequest="120" >
+        <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                    Source="dine_transparent" Aspect="AspectFit"/>
+      </Grid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

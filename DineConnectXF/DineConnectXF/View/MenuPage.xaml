@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DineConnectXF.View.MenuPage"
+             Title="Menu">
+
+     
+        <StackLayout Spacing="10">
+
+          <StackLayout BackgroundColor="#dedede">
+            <Image Source="dine_transparent_menu" Aspect="AspectFit" />
+            <BoxView HeightRequest="1"
+                     Color="Gray"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start"/>
+          </StackLayout>
+          
+          <StackLayout Orientation="Horizontal" HeightRequest="50">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer />
+            </StackLayout.GestureRecognizers>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+              </Grid.ColumnDefinitions>
+
+              <Image Grid.Column="0" 
+                     Source="home_icon"
+                     Aspect="AspectFit"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     Scale="0.75"
+                     WidthRequest="40"
+                     TranslationX="20"/>
+              <Label Grid.Column="1" 
+                     Text="Dashboard"
+                     TextColor="#777777"
+                     FontAttributes="Bold"
+                     FontSize="22"
+                     HorizontalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Start"
+                     VerticalOptions="CenterAndExpand"
+                     TranslationX="40"/>
+            </Grid>
+          
+          </StackLayout>
+
+          <BoxView HeightRequest="1"
+                  Color="Gray"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Start"/>
+
+          <StackLayout Orientation="Horizontal" HeightRequest="50">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer />
+            </StackLayout.GestureRecognizers>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+              </Grid.ColumnDefinitions>
+
+              <Image Grid.Column="0" 
+                     Source="connect_icon"
+                     Aspect="AspectFit"
+                     HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand"
+                     Scale="0.75"
+                     WidthRequest="40"
+                     TranslationX="20"/>
+              <Label Grid.Column="1" 
+                     Text="Connect"
+                     TextColor="#777777"
+                     FontAttributes="Bold"
+                     FontSize="22"
+                     HorizontalOptions="FillAndExpand"
+                     HorizontalTextAlignment="Start"
+                     VerticalOptions="CenterAndExpand"
+                     TranslationX="40"/>
+            </Grid>
+            
+          </StackLayout>
+
+          <BoxView HeightRequest="1"
+                  Color="Gray"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Start"/>
+          
+        </StackLayout>
+
+  
+</ContentPage>
