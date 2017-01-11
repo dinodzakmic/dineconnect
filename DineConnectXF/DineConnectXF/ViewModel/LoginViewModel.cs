@@ -124,11 +124,11 @@ namespace DineConnectXF.ViewModel
                 successLogin = await WebHelper.getInstance().Auth();
                 if (successLogin)
                 {
-                    var outlet = await WebHelper.getInstance().PurchLoc();
-                    LocationList = outlet.Result.Items;
+                    //var outlet = await WebHelper.getInstance().PurchLoc();
+                    //LocationList = outlet.Result.Items;
 
-                    var suppliers = await WebHelper.getInstance().Suppliers();
-                    SupplierList = suppliers.Result.Items;
+                    //var suppliers = await WebHelper.getInstance().Suppliers();
+                    //SupplierList = suppliers.Result.Items;
 
                     App.Current.MainPage = new MasterDetailPage()
                     {
