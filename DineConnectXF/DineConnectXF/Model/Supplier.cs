@@ -33,7 +33,10 @@ namespace DineConnectXF.Model
         public string CreationTime { get; set; }
         public int CreatorUserId { get; set; }
         public int Id { get; set; }
-
+        public override string ToString()
+        {
+            return SupplierName;
+        }
     }
 
     public class SupplierResult

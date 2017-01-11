@@ -97,8 +97,32 @@
       </StackLayout>
 
       <Grid HeightRequest="120" >
-        <Image HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                    Source="dine_transparent" Aspect="AspectFit"/>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+       
+        <Image x:Name="AddImage" Grid.Column="0" 
+                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                Source="add_icon" Aspect="AspectFit"/>
+        <Button Grid.Column="0" BackgroundColor="Transparent"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               Clicked="AddImage_OnClicked" />
+
+
+       
+        <Image x:Name="TakeImage" Grid.Column="1" 
+               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+               Source="camera_icon" Aspect="AspectFit"/>
+        <Button Grid.Column="1" BackgroundColor="Transparent"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              Clicked="TakeImage_OnClicked" />
+        
+       
+        
       </Grid>
     </StackLayout>
   </ScrollView>

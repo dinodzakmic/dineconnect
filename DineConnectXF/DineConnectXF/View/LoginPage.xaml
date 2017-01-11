@@ -3,77 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DineConnectXF.View.LoginPage"
              BackgroundColor="#ededed"
-             Title="Dine Connect"> 
-  
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Login}"
+             Title="Dine Connect">
+
   <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <!--<BoxView BackgroundColor="#388E3C" HeightRequest="50" 
-                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-        <Label Text="Dine Connect"
-               TextColor="White"
-               FontSize="16"
-               FontAttributes="Bold"
-               HorizontalTextAlignment="Start"
-               TranslationX="5" 
-               VerticalTextAlignment="Center"/>-->
-        <Image HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
-               Source="dine_transparent" Aspect="AspectFill" Scale="0.75"
-               TranslationY="-20"/>
-    
-      <Grid VerticalOptions="CenterAndExpand" Padding="20,20" RowSpacing="20" TranslationY="-80">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="1*" />
-          <ColumnDefinition Width="2*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-          <RowDefinition Height="Auto" /> 
-          <RowDefinition Height="Auto" />
-          <RowDefinition Height="Auto" />
-          <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        
-        <Label Grid.Row="0" Grid.Column="0"
-               Text="URL" TextColor="Black" FontSize="16"
-               HorizontalOptions="FillAndExpand" 
-               VerticalOptions="CenterAndExpand"
-               VerticalTextAlignment="Center"/>
-        <Entry Grid.Row="0" Grid.Column="1" x:Name="UrlEntry"
-               FontSize="15" 
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+    <Image HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
+            Source="dine_transparent" Aspect="AspectFill" Scale="0.75"
+            TranslationY="-20"/>
 
-        <Label Grid.Row="1" Grid.Column="0"
-               Text="TENANT" TextColor="Black" FontSize="16"
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-        <Entry Grid.Row="1" Grid.Column="1" x:Name="TenantEntry"
-               FontSize="15" TranslationY="2"
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+    <Grid VerticalOptions="CenterAndExpand" Padding="20,20" RowSpacing="20" TranslationY="-80">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="2*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
 
-        <Label Grid.Row="2" Grid.Column="0"
-               Text="USER" TextColor="Black" FontSize="16"
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
-        <Entry Grid.Row="2" Grid.Column="1" x:Name="UserEntry"
-               FontSize="15" TranslationY="2"
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+      <Label Grid.Row="0" Grid.Column="0"
+             Text="URL" TextColor="Black" FontSize="16"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="CenterAndExpand"
+             VerticalTextAlignment="Center"/>
+      <Entry Grid.Row="0" Grid.Column="1" x:Name="UrlEntry"
+             FontSize="15"
+             Text="{Binding Url}"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
 
-        <Label Grid.Row="3" Grid.Column="0"
-               Text="PASSWORD" TextColor="Black" FontSize="16"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="CenterAndExpand"
-               VerticalTextAlignment="Center"/>
-        <Entry Grid.Row="3" Grid.Column="1" x:Name="PasswordEntry"
-               FontSize="15" 
-               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
-               IsPassword="True"/>
+      <Label Grid.Row="1" Grid.Column="0"
+             Text="TENANT" TextColor="Black" FontSize="16"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+      <Entry Grid.Row="1" Grid.Column="1" x:Name="TenantEntry"
+             FontSize="15"
+             Text="{Binding Tenant}"
+             TranslationY="2"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" 
-                BorderColor="Black" BackgroundColor="#388E3C"
-                Text="LOGIN" FontSize="16" TextColor="White"
-                HorizontalOptions="CenterAndExpand"
-                Clicked="Button_OnClicked"
-                HeightRequest="60" WidthRequest="140"/>
-      
-      </Grid>
-   
+      <Label Grid.Row="2" Grid.Column="0"
+             Text="USER" TextColor="Black" FontSize="16"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+      <Entry Grid.Row="2" Grid.Column="1" x:Name="UserEntry"
+             FontSize="15"
+             Text="{Binding User}"
+             TranslationY="2"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+
+      <Label Grid.Row="3" Grid.Column="0"
+             Text="PASSWORD" TextColor="Black" FontSize="16"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="CenterAndExpand"
+             VerticalTextAlignment="Center"/>
+      <Entry Grid.Row="3" Grid.Column="1" x:Name="PasswordEntry"
+             FontSize="15"
+             Text="{Binding Password}"
+             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+             IsPassword="True"/>
+
+      <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+              x:Name="LoginButton"
+              BorderColor="Black" BackgroundColor="#388E3C"
+              Text="LOGIN" 
+              IsEnabled="{Binding LoginButtonEnabled}"
+              Command="{Binding LoginCommand}"
+              FontSize="16" TextColor="White"
+              HorizontalOptions="CenterAndExpand"
+              HeightRequest="60" WidthRequest="140"/>
+
+    </Grid>
+
   </StackLayout>
-  
+
 </ContentPage>

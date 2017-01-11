@@ -2,6 +2,10 @@ DineConnectXF.Droid.MainActivity, DineConnectXF.Droid;md5d06468d78d97c9cb8e1759a
 DineConnectXF.Droid.MainActivity, DineConnectXF.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d06468d78d97c9cb8e1759a33a564226.MainActivity
 DineConnectXF.Droid.MainActivity;md5d06468d78d97c9cb8e1759a33a564226.MainActivity
 dineconnectxf.droid.MainActivity;md5d06468d78d97c9cb8e1759a33a564226.MainActivity
+DineConnectXF.Droid.MainApplication, DineConnectXF.Droid;md5d06468d78d97c9cb8e1759a33a564226.MainApplication
+DineConnectXF.Droid.MainApplication, DineConnectXF.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d06468d78d97c9cb8e1759a33a564226.MainApplication
+DineConnectXF.Droid.MainApplication;md5d06468d78d97c9cb8e1759a33a564226.MainApplication
+dineconnectxf.droid.MainApplication;md5d06468d78d97c9cb8e1759a33a564226.MainApplication
 Acr.Support.Android.ActivityLifecycleCallbacks, Acr.Support.Android;md5cf6f91d9bcbb245b12b8f240e1ec031d.ActivityLifecycleCallbacks
 Acr.Support.Android.ActivityLifecycleCallbacks, Acr.Support.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cf6f91d9bcbb245b12b8f240e1ec031d.ActivityLifecycleCallbacks
 Acr.Support.Android.ActivityLifecycleCallbacks;md5cf6f91d9bcbb245b12b8f240e1ec031d.ActivityLifecycleCallbacks
@@ -86,6 +90,10 @@ AndroidHUD.ProgressWheel/SpinHandler, AndHUD;md5539939fcd5322368b18e9187b5e77d3d
 AndroidHUD.ProgressWheel+SpinHandler, AndHUD, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null;md5539939fcd5322368b18e9187b5e77d3d.ProgressWheel_SpinHandler
 AndroidHUD.ProgressWheel.SpinHandler;md5539939fcd5322368b18e9187b5e77d3d.ProgressWheel_SpinHandler
 androidhud.ProgressWheel_SpinHandler;md5539939fcd5322368b18e9187b5e77d3d.ProgressWheel_SpinHandler
+Plugin.Media.MediaPickerActivity, Plugin.Media;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+Plugin.Media.MediaPickerActivity, Plugin.Media, Version=2.6.2.0, Culture=neutral, PublicKeyToken=null;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+Plugin.Media.MediaPickerActivity;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+plugin.media.MediaPickerActivity;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
 Android.Support.Design.Widget.Snackbar/SnackbarActionClickImplementor, Xamarin.Android.Support.Design;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar+SnackbarActionClickImplementor, Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar.SnackbarActionClickImplementor;android.support.design.widget.Snackbar_SnackbarActionClickImplementor

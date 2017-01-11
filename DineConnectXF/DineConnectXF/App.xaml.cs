@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Acr.UserDialogs;
 using DineConnectXF.View;
+using DineConnectXF.ViewModel;
 using Xamarin.Forms;
 
 namespace DineConnectXF
@@ -12,12 +13,17 @@ namespace DineConnectXF
     {
         public static NavigationPage NavPage;
         public static MasterDetailPage MenuDetailPage;
+        private static ViewModelLocator _locator;
+        public static ViewModelLocator Locator => _locator ?? (_locator = new ViewModelLocator());
         public App()
         {
             InitializeComponent();
+
             NavPage = new NavigationPage(new LoginPage() {Title = "Login"});
+
             MenuDetailPage = new MasterDetailPage() {Detail = NavPage,
                 Master = new ContentPage() {Title = "Login"}, IsGestureEnabled = false, Title = "Login"};
+
             MainPage = new LoginPage();
         }
 

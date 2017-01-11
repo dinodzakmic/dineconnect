@@ -29,12 +29,16 @@ namespace DineConnectXF.View {
         private global::Xamarin.Forms.Entry PasswordEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button LoginButton;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(LoginPage));
             UrlEntry = this.FindByName<global::Xamarin.Forms.Entry>("UrlEntry");
             TenantEntry = this.FindByName<global::Xamarin.Forms.Entry>("TenantEntry");
             UserEntry = this.FindByName<global::Xamarin.Forms.Entry>("UserEntry");
             PasswordEntry = this.FindByName<global::Xamarin.Forms.Entry>("PasswordEntry");
+            LoginButton = this.FindByName<global::Xamarin.Forms.Button>("LoginButton");
         }
     }
 }

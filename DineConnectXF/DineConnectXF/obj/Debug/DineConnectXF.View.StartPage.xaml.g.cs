@@ -23,10 +23,18 @@ namespace DineConnectXF.View {
         private global::Xamarin.Forms.Image SpecificRadio;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image AddImage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image TakeImage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(StartPage));
             AllRadio = this.FindByName<global::Xamarin.Forms.Image>("AllRadio");
             SpecificRadio = this.FindByName<global::Xamarin.Forms.Image>("SpecificRadio");
+            AddImage = this.FindByName<global::Xamarin.Forms.Image>("AddImage");
+            TakeImage = this.FindByName<global::Xamarin.Forms.Image>("TakeImage");
         }
     }
 }
