@@ -144,17 +144,27 @@ class MonoPackageManager_Resources {
 		"System.Diagnostics.Tools.dll",
 		"GalaSoft.MvvmLight.dll",
 		"Microsoft.Practices.ServiceLocation.dll",
+		"AWSSDK.Core.dll",
+		"PCLCrypto.dll",
+		"Validation.dll",
+		"System.Xml.XDocument.dll",
+		"System.Net.Primitives.dll",
+		"System.Net.Requests.dll",
+		"System.Net.Http.Primitives.dll",
+		"System.Text.Encoding.dll",
+		"PCLStorage.Abstractions.dll",
+		"PCLStorage.dll",
+		"AWSSDK.S3.dll",
+		"AWSSDK.CognitoIdentity.dll",
+		"AWSSDK.SecurityToken.dll",
 		"GalaSoft.MvvmLight.Extras.dll",
 		"Newtonsoft.Json.dll",
-		"System.Xml.XDocument.dll",
 		"System.Runtime.Serialization.Primitives.dll",
-		"System.Text.Encoding.dll",
 		"System.Text.Encoding.Extensions.dll",
-		"System.Net.Primitives.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Runtime.InteropServices.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_24";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_23";
 }

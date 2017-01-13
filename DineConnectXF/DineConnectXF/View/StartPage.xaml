@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DineConnectXF.View.StartPage"
              BackgroundColor="#dddddd"
+             BindingContext="{Binding Source={StaticResource Locator}, Path=Start}"
              Title="Dine Connect">
   <ScrollView>
-    <StackLayout>
-      <StackLayout Padding="10,10,10,10" Spacing="10">
+    <StackLayout Padding="10,10,10,10" Spacing="10">
+      <StackLayout >
         <Frame BackgroundColor="White" Padding="10" OutlineColor="#dddddd" >
           <Grid ColumnSpacing="5" RowSpacing="10">
             <Grid.RowDefinitions>
@@ -33,6 +34,7 @@
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="End"/>
             <Picker Grid.Row="1" Grid.Column="1"
+                    x:Name="LocationPicker"
                     Title="Outlet items"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"/>
@@ -43,35 +45,47 @@
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="End"/>
             <Picker Grid.Row="2" Grid.Column="1"
+                    x:Name="SupplierPicker"
                     Title="Supplier items"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand"/>
           </Grid>
         </Frame>
-        
-        <Frame BackgroundColor="White" Padding="10" OutlineColor="#dddddd">
-          <StackLayout>
-            <StackLayout Orientation="Horizontal" HeightRequest="30" Spacing="10" >
-              <Image x:Name="AllRadio"
-                     Source="radio"
-                     Aspect="AspectFit"
-                     HeightRequest="15"
-                     HorizontalOptions="Start"/>
-              <Label VerticalTextAlignment="Center"
-                     Text="All Period"
-                     HorizontalOptions="Start"/>
 
-              <Image x:Name="SpecificRadio"
-                     Source="radioselected"
-                     Aspect="AspectFit"
-                     HeightRequest="15"
-                     HorizontalOptions="End"/>
-              <Label VerticalTextAlignment="Center"
-                     Text="Specific Period"
-                     HorizontalOptions="End"/>
+        <Frame BackgroundColor="White" Padding="10" OutlineColor="#dddddd">
+          <StackLayout >
+            <StackLayout Orientation="Horizontal" HeightRequest="30" Spacing="10" >
+              <StackLayout Orientation="Horizontal" x:Name="AllStack">
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="AllRadio"
+                       Source="radioselected"
+                       Aspect="AspectFit"
+                       HeightRequest="15"
+                       HorizontalOptions="Start"/>
+                <Label VerticalTextAlignment="Center"
+                       Text="All Period"
+                       HorizontalOptions="Start"/>
+              </StackLayout>
+
+              <StackLayout Orientation="Horizontal" x:Name="SpecificStack">
+                <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer Tapped="SpecificPeriod_OnTapped"/>
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="SpecificRadio"
+                       Source="radio"
+                       Aspect="AspectFit"
+                       HeightRequest="15"
+                       HorizontalOptions="End"/>
+                <Label VerticalTextAlignment="Center"
+                       Text="Specific Period"
+                       HorizontalOptions="End"/>
+              </StackLayout>
+             
             </StackLayout>
 
-            <Grid>
+            <Grid x:Name="CalendarGrid" IsVisible="False">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="2*" />
@@ -93,37 +107,46 @@
 
           </StackLayout>
         </Frame>
-        
+
       </StackLayout>
 
-      <Grid HeightRequest="120" >
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-       
-        <Image x:Name="AddImage" Grid.Column="0" 
-                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                Source="add_icon" Aspect="AspectFit"/>
-        <Button Grid.Column="0" BackgroundColor="Transparent"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="FillAndExpand"
-               Clicked="AddImage_OnClicked" />
+      <Frame HeightRequest="80" Padding="10">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
 
 
-       
-        <Image x:Name="TakeImage" Grid.Column="1" 
-               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-               Source="camera_icon" Aspect="AspectFit"/>
-        <Button Grid.Column="1" BackgroundColor="Transparent"
-              HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand"
-              Clicked="TakeImage_OnClicked" />
-        
-       
-        
-      </Grid>
+          <Image x:Name="AddImage" Grid.Column="0"
+                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                 Source="add_icon"
+                 HeightRequest="40"
+                 Aspect="AspectFit"/>
+          <Button Grid.Column="0" BackgroundColor="Transparent"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Clicked="AddImage_OnClicked" />
+
+
+          <Image x:Name="TakeImage" Grid.Column="1"
+                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                 Source="camera_icon"
+                 HeightRequest="40"
+                 Aspect="AspectFit"/>
+          <Button Grid.Column="1" BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Clicked="TakeImage_OnClicked" />
+
+        </Grid>
+      </Frame>
+    
+    <Frame x:Name="FrameUpload" HeightRequest="200" Padding="10" IsVisible="False">
+      <Image x:Name="ImageUpload" 
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand" />
+    </Frame>
     </StackLayout>
   </ScrollView>
 </ContentPage>

@@ -9,6 +9,8 @@ using DineConnectXF.Helpers;
 using DineConnectXF.Model;
 using DineConnectXF.View;
 using GalaSoft.MvvmLight;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
 namespace DineConnectXF.ViewModel
@@ -22,8 +24,7 @@ namespace DineConnectXF.ViewModel
         private string _password;
         private bool _loginButtonEnabled;
 
-        private List<Location> _locationList;
-        private List<Supplier> _supplierList;
+       
         #endregion
         #region Public properties
         public string Url
@@ -77,25 +78,7 @@ namespace DineConnectXF.ViewModel
         }
 
 
-        public List<Location> LocationList
-        {
-            get { return _locationList; }
-            set
-            {
-                _locationList = value; 
-                RaisePropertyChanged(() => _locationList);
-            }
-        }
-
-        public List<Supplier> SupplierList
-        {
-            get { return _supplierList; }
-            set
-            {
-                _supplierList = value;
-                RaisePropertyChanged(() => _supplierList);
-            }
-        }
+        
         #endregion
 
         #region Commands
@@ -124,12 +107,6 @@ namespace DineConnectXF.ViewModel
                 successLogin = await WebHelper.getInstance().Auth();
                 if (successLogin)
                 {
-                    //var outlet = await WebHelper.getInstance().PurchLoc();
-                    //LocationList = outlet.Result.Items;
-
-                    //var suppliers = await WebHelper.getInstance().Suppliers();
-                    //SupplierList = suppliers.Result.Items;
-
                     App.Current.MainPage = new MasterDetailPage()
                     {
                         Master = new MenuPage(),
@@ -158,6 +135,7 @@ namespace DineConnectXF.ViewModel
             }
 
         }
+        
         #endregion
 
     }

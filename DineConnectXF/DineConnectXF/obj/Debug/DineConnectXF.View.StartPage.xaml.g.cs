@@ -17,10 +17,25 @@ namespace DineConnectXF.View {
     public partial class StartPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker LocationPicker;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Picker SupplierPicker;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout AllStack;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image AllRadio;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.StackLayout SpecificStack;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image SpecificRadio;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Grid CalendarGrid;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image AddImage;
@@ -29,12 +44,25 @@ namespace DineConnectXF.View {
         private global::Xamarin.Forms.Image TakeImage;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Frame FrameUpload;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image ImageUpload;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(StartPage));
+            LocationPicker = this.FindByName<global::Xamarin.Forms.Picker>("LocationPicker");
+            SupplierPicker = this.FindByName<global::Xamarin.Forms.Picker>("SupplierPicker");
+            AllStack = this.FindByName<global::Xamarin.Forms.StackLayout>("AllStack");
             AllRadio = this.FindByName<global::Xamarin.Forms.Image>("AllRadio");
+            SpecificStack = this.FindByName<global::Xamarin.Forms.StackLayout>("SpecificStack");
             SpecificRadio = this.FindByName<global::Xamarin.Forms.Image>("SpecificRadio");
+            CalendarGrid = this.FindByName<global::Xamarin.Forms.Grid>("CalendarGrid");
             AddImage = this.FindByName<global::Xamarin.Forms.Image>("AddImage");
             TakeImage = this.FindByName<global::Xamarin.Forms.Image>("TakeImage");
+            FrameUpload = this.FindByName<global::Xamarin.Forms.Frame>("FrameUpload");
+            ImageUpload = this.FindByName<global::Xamarin.Forms.Image>("ImageUpload");
         }
     }
 }

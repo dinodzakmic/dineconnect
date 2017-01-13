@@ -14,10 +14,12 @@ namespace DineConnectXF.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<LoginViewModel>();
+            SimpleIoc.Default.Register<StartViewModel>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public LoginViewModel Login => ServiceLocator.Current.GetInstance<LoginViewModel>();
+        public StartViewModel Start => ServiceLocator.Current.GetInstance<StartViewModel>();
 
         public static void Cleanup()
         {

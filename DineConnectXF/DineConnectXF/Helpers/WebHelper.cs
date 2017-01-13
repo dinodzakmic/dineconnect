@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
+using Amazon.S3;
+using Amazon.S3.Model;
 using DineConnectXF.Model;
 using Newtonsoft.Json;
+using Plugin.Media.Abstractions;
 
 namespace DineConnectXF.Helpers
 {
@@ -66,6 +71,8 @@ namespace DineConnectXF.Helpers
             return _user;
         }
 
+        public static Locations Locations = new Locations() {Error =  new Error(), Result = new LocationResult() {Items = new List<Location>()} };
+        public static Suppliers Suppliers = new Suppliers() {Error = new Error(), Result = new SupplierResult() {Items = new List<Supplier>()} };
         public async Task<bool> Auth()
         {
             HttpResponseMessage responseMessage = null;
@@ -84,6 +91,8 @@ namespace DineConnectXF.Helpers
                 _instance._user.TenantId = user.TenantId;
                 string token = "Bearer " + user.Result;
                 _instance._client.DefaultRequestHeaders.Add("Authorization", token);
+                Locations = await PurchLoc();
+                Suppliers = await GetSuppliers();
                 return true;
 
             }
@@ -122,14 +131,16 @@ namespace DineConnectXF.Helpers
             }
         }
 
-        public async Task<Suppliers> Suppliers()
+        public async Task<Suppliers> GetSuppliers()
         {
             HttpResponseMessage responseMessage = null;
             try
             {
-                responseMessage = await _instance._client.PostAsync(_instance._getSuppString, (HttpContent)new StringContent("{\n\t\"tenantId\": " + _instance._user.TenantId + "\n}", System.Text.Encoding.UTF8, "application/json"));
+                string userId = "{\n\t\"tenantId\": " + _instance._user.TenantId + "\n}";
+                responseMessage = await _instance._client.PostAsync(_instance._getSuppString, (HttpContent)new StringContent(userId, System.Text.Encoding.UTF8, "application/json"));
                 string response = await responseMessage.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<Suppliers>(response);
+                Suppliers suppliers = JsonConvert.DeserializeObject<Suppliers>(response);
+                return suppliers;
             }
             catch (Exception ex)
             {
@@ -184,5 +195,34 @@ namespace DineConnectXF.Helpers
                 return null;
             }
         }
+
+        //private MediaFile _file;
+        //private async void Upload()
+        //{
+        //    if (_file == null)
+        //    {
+        //        UserDialogs.Instance.Toast("No file to upload");
+        //        return;
+        //    }
+
+        //    var s3Client = S3Utils.S3Client;
+        //    try
+        //    {
+        //        var response = await s3Client.PutObjectAsync(new PutObjectRequest()
+        //        {
+        //            BucketName = CONSTANTS.BUCKET_NAME.ToLowerInvariant(),
+        //            FilePath = _file.Path,
+        //            Key = _file.Path
+        //        });
+
+        //        UserDialogs.Instance.Toast("File uploaded to S3 Bucket");
+
+        //    }
+        //    catch (AmazonS3Exception s3Exception)
+        //    {
+        //        UserDialogs.Instance.Toast("Upload failed, check logs for more information");
+        //        Debug.WriteLine(s3Exception.StackTrace);
+        //    }
+        //}
     }
 }
